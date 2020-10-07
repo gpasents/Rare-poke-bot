@@ -13,7 +13,7 @@ bot.on('message', msg => {
   if (msg.author.username === 'PokéMeow' && msg.embeds[0] && msg.embeds[0].author.name === 'A wild Pokémon appeared!') {
     let footer = msg.embeds[0].footer.text;
     footer = footer.split('\n')[0];
-    if (footer.includes('Legendary') || footer.includes('Shiny')) {
+    if (footer.includes('Common') ||footer.includes('Uncommon') ||footer.includes('Legendary') || footer.includes('Shiny')) {
       let desc = msg.embeds[0].description;
       desc = desc.replace(/<.*>/, '');
       const myEmbed = new Discord.MessageEmbed()
