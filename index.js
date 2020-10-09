@@ -21,7 +21,7 @@ bot.on('message', msg => {
         .setImage(msg.embeds[0].image.url)
         .setFooter(footer)
         .setDescription(desc);
-      bot.channels.cache.get('761584846836596796').send(myEmbed);
+      bot.channels.cache.get('764227765234565130').send(myEmbed);
     }
   }
 });
@@ -36,7 +36,7 @@ bot.on('messageUpdate', async (oldMessage, newMessage) => {
         .setColor(newMessage.embeds[0].color)
         .setImage(newMessage.embeds[0].image.url)
         .setDescription(desc);
-      bot.channels.cache.get('761584846836596796').send(myEmbed);
+      bot.channels.cache.get('764227765234565130').send(myEmbed);
     }
   }
 });
