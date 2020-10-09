@@ -21,6 +21,8 @@ bot.on('message', msg => {
         .setImage(msg.embeds[0].image.url)
         .setFooter(footer)
         .setDescription(desc);
+      console.log("The actual embed :" + msg.embeds[0]);
+      console.log("my Desc : " + desc);
       bot.channels.cache.get('764227765234565130').send(myEmbed);
     }
   }
