@@ -18,6 +18,7 @@ bot.on('message', msg => {
     if (footer && (footer.includes('Legendary') || footer.includes('Shiny'))) {
       console.info("3");
       let desc = msg.embeds[0].description;
+      console.info("my Desc 1 : " + desc);
       desc = desc.replace(/<.*>/, '');
       const myEmbed = new Discord.MessageEmbed()
       .setColor(msg.embeds[0].color)
