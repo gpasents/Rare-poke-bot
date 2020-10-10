@@ -21,8 +21,8 @@ bot.on('message', msg => {
         .setImage(msg.embeds[0].image.url)
         .setFooter(footer)
         .setDescription(desc);
-      console.log("The actual embed :" + msg.embeds[0]);
-      console.log("my Desc : " + desc);
+      console.info("The actual embed :" + msg.embeds[0]);
+      console.info("my Desc : " + desc);
       //comment
       bot.channels.cache.get('764227765234565130').send(myEmbed);
     }
@@ -44,6 +44,6 @@ bot.on('messageUpdate', async (oldMessage, newMessage) => {
       }
     }
   } catch (error) {
-    console.log("error" + error);
+    console.info("error" + error);
   }
 });
