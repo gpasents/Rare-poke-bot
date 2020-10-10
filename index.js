@@ -17,16 +17,16 @@ bot.on('message', msg => {
     //console.info("2");
     if (footer && (footer.includes('Legendary') || footer.includes('Shiny'))) {
       console.info("3");
-      console.info("The actual embed :" + msg.embeds[0]);
-      console.info("my Desc : " + desc);
       let desc = msg.embeds[0].description;
       desc = desc.replace(/<.*>/, '');
       const myEmbed = new Discord.MessageEmbed()
-        .setColor(msg.embeds[0].color)
-        .setImage(msg.embeds[0].image.url)
-        .setFooter(footer)
-        .setDescription(desc);
+      .setColor(msg.embeds[0].color)
+      .setImage(msg.embeds[0].image.url)
+      .setFooter(footer)
+      .setDescription(desc);
       //comment
+      console.info("The actual embed :" + msg.embeds[0]);
+      console.info("my Desc : " + desc);
       bot.channels.cache.get('764227765234565130').send(myEmbed);
     }
   }
