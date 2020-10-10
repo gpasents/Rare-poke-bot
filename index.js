@@ -13,7 +13,7 @@ bot.on('message', msg => {
   if (msg.author.username === 'PokéMeow' && msg.embeds[0] && msg.embeds[0].author && msg.embeds[0].author.name === 'A wild Pokémon appeared!') {
     let footer = msg.embeds[0].footer.text;
     footer = footer.split('\n')[0];
-    if (footer.includes('Legendary') || footer.includes('Shiny')) {
+    if (footer && (footer.includes('Legendary') || footer.includes('Shiny'))) {
       let desc = msg.embeds[0].description;
       desc = desc.replace(/<.*>/, '');
       const myEmbed = new Discord.MessageEmbed()
@@ -31,7 +31,7 @@ bot.on('message', msg => {
 
 bot.on('messageUpdate', async (oldMessage, newMessage) => {
   try {
-    if (newMessage.author.username === 'PokéMeow' && newMessage.embeds[0].description.includes('fished out') && newMessage.embeds[0].image.height === 0) {
+    if (newMessage.author.username === 'PokéMeow' && newMessage.embeds[0] && newMessage.embeds[0].description && newMessage.embeds[0].description.includes('fished out') && newMessage.embeds[0].image.height === 0) {
       if (newMessage.embeds[0].description.includes('Shiny') || newMessage.embeds[0].description.includes('Kyogre') || newMessage.embeds[0].description.includes('Suicune')) {
         let desc = newMessage.embeds[0].description;
         desc = desc.replace(/<.*>/, '');
