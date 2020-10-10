@@ -16,15 +16,20 @@ bot.on('message', msg => {
     footer = footer.split('\n')[0];
     //console.info("2");
     if (footer && (footer.includes('Legendary') || footer.includes('Shiny'))) {
-      console.info("3");
       let desc = msg.embeds[0].description;
-      console.info("my Desc 1 : " + desc);
-      desc = desc.replace(/<.*>/, '');
+      if (footer.includes('Legendary')) {
+        desc = desc.replace(/<.*>/, '');
+        console.info("my Desc legend : " + desc);
+      } else {
+        desc = desc.substr(desc.indexOf(" ") + 1);
+        desc = desc.replace(/<.*>/, '');
+        console.info("my Desc shiny : " + desc);
+      }
       const myEmbed = new Discord.MessageEmbed()
-      .setColor(msg.embeds[0].color)
-      .setImage(msg.embeds[0].image.url)
-      .setFooter(footer)
-      .setDescription(desc);
+        .setColor(msg.embeds[0].color)
+        .setImage(msg.embeds[0].image.url)
+        .setFooter(footer)
+        .setDescription(desc);
       //comment
       console.info("The actual embed :" + msg.embeds[0]);
       console.info("my Desc : " + desc);
