@@ -65,7 +65,7 @@ bot.on('messageUpdate', async (oldMessage, newMessage) => {
     //console.info("4");
     if (newMessage.author.username === 'PokéMeow' && newMessage.embeds[0] && newMessage.embeds[0].description && newMessage.embeds[0].description.includes('fished out') && newMessage.embeds[0].image.height === 0) {
       //console.info("5");
-      if (newMessage.embeds[0].title.includes('special') || newMessage.embeds[0].description.includes('Shiny') || newMessage.embeds[0].description.includes('Kyogre') || newMessage.embeds[0].description.includes('Suicune')) {
+      if (/*newMessage.embeds[0].title.includes('special') || */newMessage.embeds[0].description.includes('Shiny') || newMessage.embeds[0].description.includes('Kyogre') || newMessage.embeds[0].description.includes('Suicune')) {
         let desc = newMessage.embeds[0].description;
         desc = desc.replace(/<.*>/, '');
         const myEmbed = new Discord.MessageEmbed()
